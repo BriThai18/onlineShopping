@@ -1,0 +1,41 @@
+{% extends 'store/main2.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="form-body text-center">
+        <div class="col-sm-8 main-section">
+            <div class="form-content">
+                <h3>Register</h3>
+                <form id="myForm" class="col-12" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{form.username.label}}
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-user"></i></span>
+                            {{form.username}}
+                        </div>
+                        {{form.email.label}}
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
+                            {{form.email}}
+                        </div>
+                        {{form.password1.label}}
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            {{form.password1}}
+                        </div>
+                        {{form.password2.label}}
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fas fa-key"></i></span>
+                            {{form.password2}}
+                        </div>
+                        <div class="d-flex justify-content-center mt-3 login_container">
+                            <input class="btn btn-primary" type="submit" value="Login">
+                        </div>
+                    </div>
+                </form>
+                <p>Already have an account?<a href="{% url 'login' %}"> Login</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

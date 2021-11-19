@@ -1,0 +1,14 @@
+{% extends 'store/main.html' %}
+
+{% block content %}
+<div class="form-body text-center">
+    <div class="col-sm-8 main-section">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <p>Would you like to increase the quantity of {{item.product.name}}?</p>
+            <a class="btn btn-warning" href="{% url 'cart' %}">Cancel</a>
+            <input class="btn btn-danger" type="submit" value="Confirm">
+        </form>
+    </div>
+</div>
+{% endblock content %}

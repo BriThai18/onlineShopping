@@ -1,0 +1,17 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row" style="margin-top: 20px;">
+    <div class="col-lg-7 text-center">
+        <img class="thumbnail product" src="{{product.imageUrl}}">
+        <div class="box-element">
+            <h4><strong>{{product.name}}</strong></h4>
+            <hr>
+            <h5>{{product.price}}</h5>
+            <h5>{{product.department}}</h5>
+            <h5>Digital: {{product.digital}}</h5>
+        </div>
+    </div>
+</div>
+{% endblock content %}

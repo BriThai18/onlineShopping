@@ -1,0 +1,15 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class="form-body text-center">
+    <div class="col-sm-8 main-section">
+        <form method="POST" action="">
+            {% csrf_token %}
+            <p>Would you like to add {{product}} to your cart?</p>
+            <a class="btn btn-warning" href="{% url 'store' %}">Cancel</a>
+            <input class="btn btn-danger" type="submit" value="Confirm">
+        </form>
+    </div>
+</div>
+{% endblock %}
